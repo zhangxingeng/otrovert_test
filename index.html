@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Take the Otrovert Test from 'The Gift of Not Belonging' by Rami Kaminski. Answer 40 items to see if you’re an otrovert and view your score instantly." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://example.com/otrovert-test" />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <meta name="theme-color" content="#4f46e5" />
+    <meta name="author" content="Rami Kaminski" />
+    <title>The Otrovert Test by Rami Kaminski</title>
+    <meta property="og:title" content="Are You an Otrovert? Take the Otrovert Test by Rami Kaminski" />
+    <meta property="og:description" content="Take the Otrovert Test from 'The Gift of Not Belonging' by Rami Kaminski. Answer 40 items to see if you’re an otrovert and view your score instantly." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/otrovert-test" />
+    <meta property="og:site_name" content="Otrovert Test" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Are You an Otrovert? Take the Otrovert Test by Rami Kaminski" />
+    <meta name="twitter:description" content="Take the Otrovert Test from 'The Gift of Not Belonging' by Rami Kaminski. Answer 40 items to see if you’re an otrovert and view your score instantly." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "The Otrovert Test",
+  "url": "https://example.com/otrovert-test",
+  "description": "Take the Otrovert Test from 'The Gift of Not Belonging' by Rami Kaminski. Answer 40 items to see if you’re an otrovert and view your score instantly.",
+  "about": {
+    "@type": "Book",
+    "name": "The Gift of Not Belonging",
+    "author": {
+      "@type": "Person",
+      "name": "Rami Kaminski"
+    }
+  }
+}
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900">
+    <header class="bg-white shadow-sm">
+      <div class="max-w-4xl mx-auto px-4 py-6">
+        <h1 class="text-2xl font-bold">Are You an Otrovert?</h1>
+        <p class="mt-2 text-sm text-slate-600">
+            This Otrovert Test is from the book <a href="https://www.amazon.com/Gift-Not-Belonging-Outsiders-Joiners/dp/0316576085" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-700">The Gift of Not Belonging</a> by Rami Kaminski.
+        </p>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+      <form id="quiz-form" class="space-y-6">
+        <div id="questions-container" class="space-y-6"></div>
+
+        <div class="flex items-center gap-3 pt-2">
+          <button type="button" id="calculate-btn" class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-white font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            Calculate Score
+          </button>
+          <button type="button" id="reset-btn" class="inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-4 py-2 text-slate-700 font-medium hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            Reset
+          </button>
+          <span id="missing-warning" class="ml-2 text-sm text-rose-600 hidden"></span>
+        </div>
+      </form>
+
+      <section id="results" class="mt-8 hidden">
+        <div class="rounded-lg border border-slate-200 bg-white p-4">
+          <p id="score-text" class="text-lg font-semibold"></p>
+          <p id="classification-text" class="mt-1"></p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Embedded questions data so the app works from a local file without any server -->
+    <script id="questions-data" type="application/json">
+[
+    {
+        "question": "I feel lonely in large social gatherings.",
+        "order": "desc"
+    },
+    {
+        "question": "I am truly close to very few people in my life.",
+        "order": "desc"
+    },
+    {
+        "question": "I enjoy parties and party as often as possible.",
+        "order": "asc"
+    },
+    {
+        "question": "I need a lot of time by myself.",
+        "order": "desc"
+    },
+    {
+        "question": "When I am sad I need people to cheer me up.",
+        "order": "asc"
+    },
+    {
+        "question": "I like being alone; I am my best company.",
+        "order": "desc"
+    },
+    {
+        "question": "I am the first one to hear about hot new places.",
+        "order": "asc"
+    },
+    {
+        "question": "I like to work on my own.",
+        "order": "desc"
+    },
+    {
+        "question": "I do not need others' approval for my beliefs.",
+        "order": "desc"
+    },
+    {
+        "question": "I am a follower of an organized religion.",
+        "order": "asc"
+    },
+    {
+        "question": "I am a heavy user of social media.",
+        "order": "asc"
+    },
+    {
+        "question": "I have nothing to hide, but I prefer to keep my life to myself anyway.",
+        "order": "desc"
+    },
+    {
+        "question": "I mistrust conventional wisdom; it is groupthink.",
+        "order": "desc"
+    },
+    {
+        "question": "I consider thinking an activity.",
+        "order": "desc"
+    },
+    {
+        "question": "I am an observer of life, not an active participant.",
+        "order": "desc"
+    },
+    {
+        "question": "I do not like to be alone.",
+        "order": "asc"
+    },
+    {
+        "question": "I think most people do not know that I am shy.",
+        "order": "desc"
+    },
+    {
+        "question": "I like to wear bright colors; they make me to stand out in the crowd.",
+        "order": "asc"
+    },
+    {
+        "question": "I like to get attention from those around me.",
+        "order": "asc"
+    },
+    {
+        "question": "The opinion of others is very important to me.",
+        "order": "asc"
+    },
+    {
+        "question": "I think sharing a working space is good for sharing ideas.",
+        "order": "asc"
+    },
+    {
+        "question": "I like it when others agree with me.",
+        "order": "asc"
+    },
+    {
+        "question": "I don't mind being in the minority.",
+        "order": "desc"
+    },
+    {
+        "question": "I develop a personal philosophy to guide my life rather than adopting one from the outside.",
+        "order": "desc"
+    },
+    {
+        "question": "I want to be understood.",
+        "order": "asc"
+    },
+    {
+        "question": "I am sometimes scared by my own thoughts.",
+        "order": "desc"
+    },
+    {
+        "question": "I own and stand behind my views.",
+        "order": "desc"
+    },
+    {
+        "question": "I think every question has an answer.",
+        "order": "asc"
+    },
+    {
+        "question": "I don't accept any ideas or notions without examining them myself.",
+        "order": "desc"
+    },
+    {
+        "question": "I have to be my own boss.",
+        "order": "desc"
+    },
+    {
+        "question": "I think that each problem has many possible solutions.",
+        "order": "desc"
+    },
+    {
+        "question": "I think my teachers or superiors are always right.",
+        "order": "asc"
+    },
+    {
+        "question": "I have my best ideas in meetings.",
+        "order": "asc"
+    },
+    {
+        "question": "I am naturally eclectic rather than specialized.",
+        "order": "desc"
+    },
+    {
+        "question": "I rely on myself. Asking for help is difficult.",
+        "order": "desc"
+    },
+    {
+        "question": "When I share stories about myself, I try to be accurate in every detail.",
+        "order": "asc"
+    },
+    {
+        "question": "I believe the only wisdom is the one that is coming down the generations.",
+        "order": "asc"
+    },
+    {
+        "question": "I have a deep respect for authority figures.",
+        "order": "asc"
+    },
+    {
+        "question": "I love new ideas.",
+        "order": "desc"
+    },
+    {
+        "question": "I often question myself.",
+        "order": "desc"
+    }
+]
+    </script>
+
+    <script>
+      const SCALE_LABELS = [
+        'Very Strongly Agree',
+        'Strongly Agree',
+        'Agree',
+        'Neither Agree nor Disagree',
+        'Disagree',
+        'Strongly Disagree',
+        'Very Strongly Disagree'
+      ];
+
+      /**
+       * Build the quiz UI from embedded data
+       */
+      function renderQuestions() {
+        const container = document.getElementById('questions-container');
+        const dataText = document.getElementById('questions-data').textContent;
+        /** @type {{ question: string; order: 'asc'|'desc'; }[]} */
+        const questions = JSON.parse(dataText);
+
+        questions.forEach((q, index) => {
+          const qId = `q_${index}`;
+          const group = document.createElement('fieldset');
+          // Use a borderless fieldset for semantics, and render a card inside it
+          group.className = 'border-0 p-0';
+
+          const legend = document.createElement('legend');
+          // Keep legend for accessibility but visually hide it
+          legend.className = 'sr-only';
+          legend.textContent = `${index + 1}. ${q.question}`;
+          group.appendChild(legend);
+
+          // Card wrapper so the question sits inside the box
+          const card = document.createElement('div');
+          card.className = 'rounded-lg border border-slate-200 bg-white p-4';
+
+          const title = document.createElement('p');
+          title.className = 'mb-3 font-medium';
+          title.textContent = `${index + 1}. ${q.question}`;
+          card.appendChild(title);
+
+          // Horizontal scale row
+          const optionsWrap = document.createElement('div');
+          optionsWrap.className = 'flex items-center gap-3 sm:gap-4 flex-nowrap overflow-x-auto';
+
+          const leftExtreme = document.createElement('span');
+          leftExtreme.className = 'text-sm text-emerald-600';
+          leftExtreme.textContent = 'Agree';
+          optionsWrap.appendChild(leftExtreme);
+
+          const radioRow = document.createElement('div');
+          radioRow.className = 'flex-1 flex items-center justify-between';
+
+          // Render in the required fixed order (Always this order)
+          SCALE_LABELS.forEach((label, i) => {
+            const valueOrdinal = i + 1; // 1..7 in the displayed order
+
+            const optionId = `${qId}_${valueOrdinal}`;
+            const labelEl = document.createElement('label');
+            labelEl.setAttribute('for', optionId);
+            labelEl.className = 'cursor-pointer p-2';
+
+            const input = document.createElement('input');
+            input.type = 'radio';
+            input.name = qId;
+            input.id = optionId;
+            input.value = String(valueOrdinal); // ordinal in presented order
+            input.className = 'h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-slate-300';
+            input.setAttribute('aria-label', label);
+            input.title = label;
+
+            labelEl.appendChild(input);
+            radioRow.appendChild(labelEl);
+          });
+
+          const rightExtreme = document.createElement('span');
+          rightExtreme.className = 'text-sm text-purple-600';
+          rightExtreme.textContent = 'Disagree';
+
+          optionsWrap.appendChild(radioRow);
+          optionsWrap.appendChild(rightExtreme);
+
+          // Store scoring order on the fieldset
+          group.dataset.order = q.order;
+          card.appendChild(optionsWrap);
+          group.appendChild(card);
+          container.appendChild(group);
+        });
+      }
+
+      function computeScore() {
+        const container = document.getElementById('questions-container');
+        const groups = Array.from(container.querySelectorAll('fieldset'));
+        let total = 0;
+        let missing = 0;
+        let firstUnanswered = null;
+
+        groups.forEach((group) => {
+          const name = group.querySelector('input[type="radio"]').name;
+          const checked = group.querySelector('input[type="radio"]:checked');
+          if (!checked) {
+            missing += 1;
+            if (!firstUnanswered) firstUnanswered = group;
+            return;
+          }
+          const ordinal = parseInt(checked.value, 10); // 1..7 in the displayed order
+          const order = group.dataset.order;
+          const points = order === 'desc' ? (8 - ordinal) : ordinal;
+          total += points;
+        });
+
+        return { total, missing, firstUnanswered };
+      }
+
+      function showResults(total) {
+        const THRESHOLD = 188;
+        const results = document.getElementById('results');
+        const scoreText = document.getElementById('score-text');
+        const classificationText = document.getElementById('classification-text');
+        scoreText.textContent = `Your total score: ${total}`;
+        classificationText.textContent = total >= THRESHOLD
+          ? 'You are likely an otrovert (≥ 188).'
+          : 'You are likely not an otrovert (< 188).';
+        results.classList.remove('hidden');
+        results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function resetForm() {
+        document.getElementById('quiz-form').reset();
+        document.getElementById('results').classList.add('hidden');
+        const warn = document.getElementById('missing-warning');
+        warn.classList.add('hidden');
+        warn.textContent = '';
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        renderQuestions();
+
+        document.getElementById('calculate-btn').addEventListener('click', () => {
+          const { total, missing, firstUnanswered } = computeScore();
+          const warn = document.getElementById('missing-warning');
+          if (missing > 0) {
+            warn.textContent = `${missing} question${missing === 1 ? '' : 's'} unanswered. Please complete all items.`;
+            warn.classList.remove('hidden');
+            if (firstUnanswered) firstUnanswered.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+          }
+          warn.classList.add('hidden');
+          warn.textContent = '';
+          showResults(total);
+        });
+
+        document.getElementById('reset-btn').addEventListener('click', resetForm);
+      });
+    </script>
+  </body>
+  </html>
+
+
